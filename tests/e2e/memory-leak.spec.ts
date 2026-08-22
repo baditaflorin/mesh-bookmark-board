@@ -23,6 +23,8 @@ const DURATION = Number(process.env.MESH_LEAK_DURATION_MS ?? 60_000);
 const BUDGET_MB = Number(process.env.MESH_LEAK_BUDGET_MB ?? 15);
 const NOISE_OPS = Number(process.env.MESH_LEAK_NOISE_OPS ?? 200);
 
+test.setTimeout(DURATION + 15_000);
+
 test("memory leak — heap growth stays under budget over a long-running room", async ({
   browser,
 }) => {
